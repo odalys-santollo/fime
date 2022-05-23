@@ -1,0 +1,16 @@
+6. Ahora que ya has normalizado los datos estás listo para pasar al inciso d del paso 3 del proceso de aplicación del algoritmo k-NN, el cual se refiere a crear los data sets de entrenamiento y de prueba.
+A fin de que el modelo de clasificación creado con k-NN funcione mejor, se requiere que éste se divida en dos partes: el conjunto de entrenamiento y el de prueba. El primero se utiliza para entrenar al sistema, mientras el segundo para evaluar al aprendiz o sistema entrenado. Generalmente, la división del data set en conjuntos de entrenamiento y prueba es disjunta: la forma más común de división es tomar 2/3 del data set original como conjunto de entrenamiento, y el 1/3 restante como el data set de prueba [4]. 
+Da un nuevo vistazo a la característica Species del data set Iris , teclea el siguiente comando:
+> show(iris$Species)	
+Como se describe en [4], la figura 4 ilustra el resultado de listar la característica Species de todos los casos del data set Iris .También puedes observar que si eliges dividir el data set tal y como está, podrías tener sólo clases de flores “ Setosa ” y “ Versicolor ” en el data set de entrenamiento. Así, el modelo podría clasificar todas las instancias no conocidas o bien como “ Setosa ”, o bien como “ Versicolor ”, por lo que no podría advertir otra clase distinta de flor, como “ Virginica ”, por ejemplo. 
+El algoritmo k-NN (k-Nearest Neighbors), o de los k-vecinos más cercanos, se usa tanto para clasificación, como para regresión.
+
+Como se explica en [1], k-NN toma como entrada los k ejemplos más cercanos en un data set. La salida que genera depende de si k-
+NN se usa para clasificar o para predecir (regresión). Si es el primer caso, el algoritmo genera como salida un listado donde se indica la
+
+membresía de cada caso a una clase determinada. Un objeto se clasifica de acuerdo a la cercanía que tiene con los objetos a su
+alrededor. Así, cada objeto se asigna a la clase más común entre sus k vecinos más cercanos. k es un entero positivo, con un valor
+
+pequeño. Si k=1, entonces el elemento de entrada se asocia a la clase a la que pertenece su vecino más próximo. Por otra parte, si k-
+NN se utiliza para un problema de regresión, la salida será un valor para una propiedad de un objeto, el cual es un promedio del valor
+
